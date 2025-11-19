@@ -24,7 +24,7 @@ Arguments:
 - `--max-tokens` (int, optional)
 - `--out-dir` (default `runs/`)
 
-Output: `runs/run_<timestamp>_<id>.json` following the schema in `src/models.py`.
+ Output: `runs/run_<timestamp>_<id>.json` following the schema in `src/models.py`.
 
 ### Alternate LLM endpoints
 
@@ -39,4 +39,4 @@ When these variables are present the workflow sends the same payload structure o
 
 - Keep the JSON schema stable unless user-approved; see `AGENTS.md`.
 - When editing prompts, ensure they match the expected JSON structure and keep persona intent intact.
-- Add tests under `tests/` (not yet present) that import from `src.workflow`.
+- Run `python -m pytest` to execute the existing tests under `tests/`, including serialization checks and the generic LLM payload test.
