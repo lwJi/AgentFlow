@@ -26,6 +26,15 @@ Arguments:
 
 Output: `runs/run_<timestamp>_<id>.json` following the schema in `src/models.py`.
 
+### Alternate LLM endpoints
+
+By default the orchestrator uses OpenAI’s Chat Completions API. To target another OpenAI-compatible endpoint, set:
+
+- `LLM_BASE_URL` – full URL to POST (e.g., `https://myendpoint/v1/chat/completions`)
+- `LLM_API_KEY` – bearer token passed as `Authorization: Bearer ...`
+
+When these variables are present the workflow sends the same payload structure over HTTP using `requests`, still expecting `choices[0].message.content` with JSON text.
+
 ## Development hints
 
 - Keep the JSON schema stable unless user-approved; see `AGENTS.md`.
